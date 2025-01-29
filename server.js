@@ -7,10 +7,11 @@ const socketIo = require('socket.io');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
-  cors: {
-    origin: "http://localhost:3000",  // Allow React app to connect to Socket.io server
-    methods: ["GET", "POST"]
-  }
+    cors: {
+        origin: "http://35.180.138.52", // Replace with your actual frontend domain/IP
+        methods: ["GET", "POST"],
+        credentials: true
+    }
 });
 
 // Store users and their socket connections
